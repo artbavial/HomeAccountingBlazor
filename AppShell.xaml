@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:HomeAccountingBlazor"
+       x:Class="HomeAccountingBlazor.AppShell">
+
+    <Shell.ToolbarItems>
+        <ToolbarItem Text="Контрагенты" IconImageSource="contacts.png" Command="{Binding NavigateCommand}" CommandParameter="ContactsPage" />
+        <ToolbarItem Text="Счета" IconImageSource="accounts.png" Command="{Binding NavigateCommand}" CommandParameter="AccountsPage" />
+        <ToolbarItem Text="Валюты" IconImageSource="currencies.png" Command="{Binding NavigateCommand}" CommandParameter="CurrenciesPage" />
+        <ToolbarItem Text="Поиск" IconImageSource="search.png" Command="{Binding NavigateCommand}" CommandParameter="SearchPage" />
+        <ToolbarItem Text="Калькулятор" IconImageSource="calculator.png" Command="{Binding NavigateCommand}" CommandParameter="CalculatorPage" />
+    </Shell.ToolbarItems>
+
+    <TabBar>
+        <Tab Title="Счета">
+            <ShellContent ContentTemplate="{DataTemplate local:AccountsPage}" Icon="accounts.png" />
+        </Tab>
+        <Tab Title="Доходы">
+            <ShellContent ContentTemplate="{DataTemplate local:IncomePage}" Icon="income.png" />
+        </Tab>
+        <Tab Title="Расходы">
+            <ShellContent ContentTemplate="{DataTemplate local:ExpensesPage}" Icon="expenses.png" />
+        </Tab>
+        <Tab Title="Отчеты">
+            <ShellContent ContentTemplate="{DataTemplate local:ReportsPage}" Icon="reports.png" />
+        </Tab>
+    </TabBar>
+
+</Shell>
