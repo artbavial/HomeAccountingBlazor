@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomeAccountingBlazor.Pages.LoginPage"
+             Title="Вход в Home Accounting Blazor">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout.Width>
+            <OnPlatform x:TypeArguments="x:Double">
+                <On Platform="iOS, Android">400</On>
+            </OnPlatform>
+        </StackLayout.Width>
+        <StackLayout.Padding>
+            <Thickness Left="20" Right="20" Top="20" Bottom="20" />
+        </StackLayout.Padding>
+        <Label Text="Имя пользователя:" />
+        <Entry Placeholder="Введите имя пользователя" x:Name="usernameEntry" />
+
+        <Label Text="Пароль:" />
+        <Entry Placeholder="Введите пароль" x:Name="passwordEntry" IsPassword="True" />
+
+        <Button Text="Пропустить" Clicked="SkipLogin" />
+    </StackLayout>
+</ContentPage>
